@@ -1,0 +1,102 @@
+<?php/*
+        <div class="container-fluid zig" id="galery">
+            <div class="container intervalSection">
+                <h1 class="text-center mb-5 myTitle">Keseruan di Startup Expo Sebelumnya</h1>
+                <div class="card-columns">
+                    <div class="card">
+                        <div class="hovereffect">
+                            <img class="card-img-top" src="{{asset('myAssets/galery/IMG_8560-min.JPG')}}" alt="">
+                            <div class="overlay">
+                                <div >
+                                    <p class="text-left">
+                                        <span>Keterangan</span>
+                                    </p>
+                                    <h2 class="my-auto"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="hovereffect">
+                            <img class="card-img-top" src="{{asset('myAssets/galery/IMG_8522-min.JPG')}}" alt="">
+                            <div class="overlay">
+                                <div >
+                                    <p class="text-left">
+                                        <span>Keterangan</span>
+                                    </p>
+                                    <h2 class="my-auto"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="hovereffect">
+                            <img class="card-img-top" src="{{asset('myAssets/galery/IMG_8512-min.JPG')}}" alt="">
+                            <div class="overlay">
+                                <div >
+                                    <p class="text-left">
+                                        <span>Keterangan</span>
+                                    </p>
+                                    <h2 class="my-auto"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="hovereffect">
+                            <img class="card-img-top" src="{{asset('myAssets/galery/IMG_8496-min.JPG')}}" alt="">
+                            <div class="overlay">
+                                <div >
+                                    <p class="text-left">
+                                        <span>Keterangan</span>
+                                    </p>
+                                    <h2 class="my-auto"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="hovereffect">
+                            <img class="card-img-top" src="{{asset('myAssets/galery/IMG_8482-min.JPG')}}" alt="">
+                            <div class="overlay">
+                                <div >
+                                    <p class="text-left">
+                                        <span>Keterangan</span>
+                                    </p>
+                                    <h2 class="my-auto"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="hovereffect">
+                            <img class="card-img-top" src="{{asset('myAssets/galery/IMG_8479-min.JPG')}}" alt="">
+                            <div class="overlay">
+                                <div >
+                                    <p class="text-left">
+                                        <span>Keterangan</span>
+                                    </p>
+                                    <h2 class="my-auto"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="hovereffect">
+                            <img class="card-img-top" src="{{asset('myAssets/galery/IMG_8450-min.JPG')}}" alt="">
+                            <div class="overlay">
+                                <div >
+                                    <p class="text-left">
+                                        <span>Keterangan</span>
+                                    </p>
+                                    <h2 class="my-auto"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    */?>
