@@ -17,7 +17,7 @@ class MainController extends Controller
     public function index()
     {
         $date = date("Y/m/d");
-        $tenants = Tenant::limit(3)->get();
+        $tenants = Tenant::paginate(7);
         $streamings = Streaming::limit(2)->get();
         $jadwals = Streaming::all();
         // $streamings = Streaming::where("tanggal_tayang", $date)->get();

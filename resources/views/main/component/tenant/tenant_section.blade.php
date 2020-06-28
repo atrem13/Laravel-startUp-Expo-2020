@@ -9,16 +9,42 @@
 
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        @for ($i = 0; $i < 10; $i++)
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Kategori Usaha</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             @foreach ($tenants as $tenant)
-                                <div class="col-sm-2 mb-2 text-center" >
-                                    <img src="{{asset('myAssets/tenant/') . '/' . $tenant->foto}}" alt="" class="rounded-circle img-fluid" style="height:80px;"><br>
-                                    <span>{{$tenant->nama}}</span>
-                                </div>
+                                <tr>
+                                    <td scope="row">{{$tenant->id}}</td>
+                                    <td class=""><span class="fa fa-book mr-2"></span>{{$tenant->nama}}</td>
+                                    <td>{{$tenant->kategori_usaha}}</td>
+                                    <td><a href="" class="myBtn myBg">See More</a></td>
+                                </tr>
                             @endforeach
-                        @endfor
-                    </div>
+                            <tr>
+                                <td colspan="3">
+                                    {{$tenants->links()}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {{-- <div class="row">
+                        @foreach ($tenants as $tenant)
+                            <div class="col-sm-4 mb-3 text-center" >
+                                <img src="{{asset('myAssets/tenant/') . '/' . $tenant->foto}}" alt="" class="rounded-circle img-fluid" style="height:100px;"><br>
+                                <span>{{$tenant->nama}}</span>
+                            </div>
+                        @endforeach
+                        <div class="col-sm-4 offset-4 text-center mt-2">
+                            {{$tenants->links()}}
+                        </div>
+                    </div> --}}
                 </div>
             </div>
 
