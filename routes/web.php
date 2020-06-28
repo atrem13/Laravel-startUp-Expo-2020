@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MainController@index')->name('main.index');
 Route::resource('tenant', 'tenantController');
 Route::resource('streaming', 'streamingController');
+Route::resource('galery', 'galeryController');
+Route::get('/delay', function(){
+    return view('delay.index');
+});
 

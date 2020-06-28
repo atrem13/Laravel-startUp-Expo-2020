@@ -13,7 +13,7 @@ class galeryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class galeryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'nama.required' => 'nama harus diisi',
+            'foto.required' => 'foto harus diisi',
+            'foto.image' =>  'foto berupa gambar',
+            'foto.mimes' => 'format foto berupa jpeg, jpg, png, svg',
+            'foto.max' => 'ukuran foto maksimal 2mb'
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\galeryRequest;
 use App\Models\Galery;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class GaleryController extends Controller
      */
     public function index()
     {
-        //
+        $galerys = Galery::all();
+        return view('panelAdmin.galery.index', compact('galerys'));
     }
 
     /**
@@ -24,7 +26,7 @@ class GaleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('panelAdmin.galery.create');
     }
 
     /**
@@ -33,9 +35,16 @@ class GaleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(galeryRequest $request)
     {
-        //
+        $validated = $request->validated();
+        $image = $request->file('foto');
+        $newImageName = time().'.'.$image->getClientOriginalExtension();
+        $validated['foto'] = $newImageName;
+        if(Galery::create($validated)){
+            $image->move(public_path('/myAssets/galery/'), $newImageName);
+            return redirect()->route('galery.index');
+        }
     }
 
     /**
@@ -46,7 +55,7 @@ class GaleryController extends Controller
      */
     public function show(Galery $galery)
     {
-        //
+        return view('panelAdmin.galery.edit', compact('galery'));
     }
 
     /**
@@ -57,7 +66,7 @@ class GaleryController extends Controller
      */
     public function edit(Galery $galery)
     {
-        //
+        return view('panelAdmin.galery.edit', compact('galery'));
     }
 
     /**
@@ -67,9 +76,27 @@ class GaleryController extends Controller
      * @param  \App\Models\Galery  $galery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Galery $galery)
+    public function update(galeryRequest $request, Galery $galery)
     {
-        //
+        $validated = $request->validated();
+        $updateImage = false;
+        $oldImageName = $galery->foto;
+        if($request->hasFile('foto')){
+            $updateImage = true;
+            $image = $request->file('foto');
+            $newImageName = time().'.'.$image->getClientOriginalExtension();
+            $validated['foto'] = $newImageName;
+        }
+        if($galery->update($validated)){
+            if($updateImage){
+                $image->move(public_path('/myAssets/galery'), $newImageName);
+            }
+            if($oldImageName){
+                unlink(public_path().'/myAssets/galery/'.$oldImageName);
+            }
+            return redirect()->route('galery.index');
+        }
+
     }
 
     /**
@@ -80,6 +107,12 @@ class GaleryController extends Controller
      */
     public function destroy(Galery $galery)
     {
-        //
+        $oldImageName = $galery->foto;
+        if($galery->delete()){
+            if($oldImageName){
+                unlink(public_path().'/myAssets/galery/'.$oldImageName);
+            }
+            return redirect()->route('galery.index');
+        }
     }
 }
