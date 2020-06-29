@@ -22,3 +22,4 @@ Route::get('/delay', function(){
     return view('delay.index');
 });
 
+
