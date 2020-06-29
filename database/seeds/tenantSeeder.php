@@ -16,7 +16,7 @@ class tenantSeeder extends Seeder
                 "nama" => "Kostpedia",
                 "deskripsi" => "penyedia jasa informasi kost di bali",
                 "kategori_usaha" => "penyedia website, mobile apps, IT support",
-                "foto" => "IMG_9999.png",
+                "foto" => "IMG_9999.JPG",
                 "video" => "https://www.youtube.com/watch?v=UQqkac6C_aU",
                 "link" => "https://www.kostpedia.id/",
                 "score" => 0
@@ -26,7 +26,7 @@ class tenantSeeder extends Seeder
                 "nama" => "Kostpedia",
                 "deskripsi" => "penyedia jasa informasi kost di bali",
                 "kategori_usaha" => "penyedia website, mobile apps, IT support",
-                "foto" => "IMG_8518.png",
+                "foto" => "IMG_8518.JPG",
                 "video" => "https://www.youtube.com/watch?v=UQqkac6C_aU",
                 "link" => "https://www.kostpedia.id/",
                 "score" => 0
@@ -36,18 +36,15 @@ class tenantSeeder extends Seeder
                 "nama" => "Kostpedia",
                 "deskripsi" => "penyedia jasa informasi kost di bali",
                 "kategori_usaha" => "penyedia website, mobile apps, IT support",
-                "foto" => "IMG_8488.png",
+                "foto" => "IMG_8488.JPG",
                 "video" => "https://www.youtube.com/watch?v=UQqkac6C_aU",
                 "link" => "https://www.kostpedia.id/",
                 "score" => 0
 
             ]
         ];
-        for ($i=0; $i <10 ; $i++) {
-            # code...
-            foreach($tenants as $tenant){
-                Tenant::create($tenant);
-            };
-        }
+        foreach($tenants as $tenant){
+            Tenant::create($tenant);
+        };
     }
 }
