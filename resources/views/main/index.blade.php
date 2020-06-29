@@ -94,6 +94,12 @@
             display: block;
             z-index: 99;
         }
+        .tenantHover img {
+            filter:grayscale(100%);
+        }
+        .tenantHover:hover img {
+            filter:grayscale(0%);
+        }
 
     </style>
 </head>
