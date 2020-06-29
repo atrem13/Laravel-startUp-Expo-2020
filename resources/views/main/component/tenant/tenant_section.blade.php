@@ -48,8 +48,54 @@
                         @foreach ($tenants as $tenant)
                             <div class="col-md-2 col-sm-4 mb-3 text-center tenantHover" >
                                 <img src="{{asset('myAssets/icon/'). '/'. $pict[rand(0,4)] }}" alt="" class="rounded-circle img-fluid " style="height:80px;"><br>
-                                <span style="font-size:12px">{{$tenant->nama}}</span>
+                                <span style="font-size:12px"><button class="tenantModal" data-toggle="modal" data-target="#tenantDetail-{{$tenant->id}}">{{$tenant->nama}}</button></span>
                             </div>
+
+                            {{-- modal --}}
+                            <div class="modal fade" id="tenantDetail-{{$tenant->id}}" tabindex="-1" role="dialog" aria-labelledby = "myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+
+                                <!--Content-->
+                                <div class="modal-content text-dark">
+                                    {{-- header --}}
+                                    <div class="modal-header">
+                                    {{-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> --}}
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <!--Body-->
+                                    <div class="modal-body mb-0 p-0">
+                                    <div class="container">
+                                        <div class="row my-5">
+                                        <div class="col-sm-12 col-md-6">
+                                            <h3>{{$tenant->nama}}</h3>
+                                            <p>{{$tenant->deskripsi}}</p>
+                                            <p><a href="">Link web</a></p>
+                                            <br>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                            <iframe class="embed-responsive-item" src="{{$tenant->video}}"
+                                                allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    </div>
+
+                                    <!--Footer-->
+                                    <div class="modal-footer justify-content-center">
+                                    <button class="btn btn-danger"><span class="fa fa-heart"></span> Like</button>
+                                    </div>
+
+                                </div>
+                                <!--/.Content-->
+
+                                </div>
+                            </div>
+                            {{--Modal--}}
                         @endforeach
                     </div>
                 </div>

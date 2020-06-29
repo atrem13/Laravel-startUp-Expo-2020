@@ -100,6 +100,21 @@
         .tenantHover:hover img {
             filter:grayscale(0%);
         }
+        .tenantModal{
+            text-decoration: none;
+            background-color:white;
+            border:none
+        }
+        .tenantModal:focus {
+            border:none
+            text-decoration: none;
+            outline: none;
+        }
+        .tenantModal:active {
+            border:none
+            text-decoration: none;
+            outline: none;
+        }
 
     </style>
 </head>
